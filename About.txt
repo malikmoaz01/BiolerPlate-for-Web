@@ -1,0 +1,171 @@
+import React, { useState, useEffect } from "react";
+
+const AboutUsWithServicesAndExperience = () => {
+  const [clients, setClients] = useState(0);
+  const [projects, setProjects] = useState(0);
+  const [delivery, setDelivery] = useState(0);
+  const [experience, setExperience] = useState(0);
+
+  useEffect(() => {
+    animateNumber(setClients, 1370);
+    animateNumber(setProjects, 5490);
+    animateNumber(setDelivery, 100);
+    animateNumber(setExperience, 12);
+  }, []);
+
+  const animateNumber = (setter, target) => {
+    let count = 0;
+    const interval = setInterval(() => {
+      count += Math.ceil(target / 100);
+      if (count >= target) {
+        count = target;
+        clearInterval(interval);
+      }
+      setter(count);
+    }, 30);
+  };
+
+  return (
+    <div className="bg-white py-10 px-6 lg:px-20">
+      <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-10 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <div className="flex flex-col space-y-6">
+            <img
+              src="/assets/img12.jpg"
+              alt="Concrete work"
+              className="h-56 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="/assets/img12.jpg"
+              alt="Flooring work"
+              className="h-56 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+          <div className="flex flex-col space-y-6">
+            <img
+              src="/assets/img12.jpg"
+              alt="Epoxy flooring"
+              className="h-56 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            />
+            <img
+              src="/assets/img12.jpg"
+              alt="Waterproofing wall"
+              className="h-56 object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
+            />
+          </div>
+        </div>
+
+        {/* Text Section */}
+        <div className="flex flex-col justify-center space-y-6">
+          <h2 className="text-5xl font-bold text-gray-800 mb-4">We Help Customers Get Their Success.</h2>
+          <p className="text-2xl text-gray-600 mb-6">
+            Since 2009, <span className="text-blue-600 font-semibold">TSS</span> has excelled in waterproofing, epoxy flooring, and more. Our expert team, partnered with industry leaders, serves clients like <span className="font-semibold">EMAAR</span> and <span className="font-semibold">Al Naboodah</span>. Trust us for quality solutions in <span className="text-blue-600 font-semibold">Dubai</span>.
+          </p>
+          <a
+            href="#"
+            className="inline-block bg-blue-600 text-white text-sm md:text-lg px-4 md:px-6 py-2 rounded-lg shadow-md hover:bg-blue-700 transition duration-300"
+          >
+            Learn More
+          </a>
+        </div>
+      </div>
+
+      {/* Services Section */}
+      <div className="text-center mb-16">
+	  <div className="relative inline-block">
+          <p className="text-blue-600 font-semibold mb-10">Popular</p>
+          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 rounded-full w-12 h-12 bg-blue-600 text-white flex items-center justify-center text-lg font-semibold animate-ping">
+            🌟
+          </div>
+        </div>
+        <h2 className="text-4xl font-bold text-gray-800 mb-6">Services</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="flex justify-center mb-4">
+              <div className="bg-blue-100 p-4 rounded-full">
+                <img
+                  src="/icons/injection.png"
+                  alt="Injection Grouting"
+                  className="h-8 w-8"
+                />
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Injection Grouting Works</h3>
+            <p className="text-gray-600">
+              Grouting is the task of injecting liquids, mixed suspensions, or semi-solid mixtures under compulsion.
+            </p>
+          </div>
+          <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="flex justify-center mb-4">
+              <div className="bg-blue-100 p-4 rounded-full">
+                <img
+                  src="/icons/waterproofing.png"
+                  alt="Waterproofing"
+                  className="h-8 w-8"
+                />
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Water Proofing</h3>
+            <p className="text-gray-600">
+              Waterproofing is the process of making an object or structure waterproof.
+            </p>
+          </div>
+          <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="flex justify-center mb-4">
+              <div className="bg-blue-100 p-4 rounded-full">
+                <img
+                  src="/icons/floor-coating.png"
+                  alt="Floor Coating"
+                  className="h-8 w-8"
+                />
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Floor Coating</h3>
+            <p className="text-gray-600">
+              Epoxy resin floors are extremely durable and provide a highly attractive finish.
+            </p>
+          </div>
+          <div className="p-6 rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <div className="flex justify-center mb-4">
+              <div className="bg-blue-100 p-4 rounded-full">
+                <img
+                  src="/icons/expansion-joint.png"
+                  alt="Expansion Joint Works"
+                  className="h-8 w-8"
+                />
+              </div>
+            </div>
+            <h3 className="text-xl font-semibold mb-2">Expansion Joint Works</h3>
+            <p className="text-gray-600">
+              Expansion joints relieve stress on building materials during construction.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <div className="py-12 text-center">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-4">
+		<div>
+            <h3 className="text-4xl font-bold text-blue-500">{experience}</h3>
+            <p className="text-gray-600">Years of Experience</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-bold text-blue-500">{clients}+</h3>
+            <p className="text-gray-600">Clients</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-bold text-blue-500">{projects}+</h3>
+            <p className="text-gray-600">Projects Completed</p>
+          </div>
+          <div>
+            <h3 className="text-4xl font-bold text-blue-500">{delivery}+</h3>
+            <p className="text-gray-600">On-time Delivery</p>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default AboutUsWithServicesAndExperience;
